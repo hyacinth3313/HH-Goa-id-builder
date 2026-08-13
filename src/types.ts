@@ -30,6 +30,7 @@ export interface BuilderMember {
   techStack: string[];
   vibe: string;
   generatedTitle: string;
+  builderId: string;
 }
 
 export interface BuilderData {
@@ -48,6 +49,7 @@ export interface BuilderData {
   generatedTitle: string;
   theme: CardThemeId;
   unlocked: boolean;
+  builderId: string;
 }
 
 export interface TeamData {
@@ -87,6 +89,16 @@ export const DEFAULT_MEMBER: BuilderMember = {
   techStack: ['React', 'TypeScript', 'Solana'],
   vibe: 'Goa Vibes',
   generatedTitle: '',
+  builderId: '',
+};
+
+export const generateBuilderId = (): string => {
+  const nums = Math.floor(100 + Math.random() * 900).toString();
+  const letters = String.fromCharCode(
+    65 + Math.floor(Math.random() * 26),
+    65 + Math.floor(Math.random() * 26)
+  );
+  return `${nums}${letters}`;
 };
 
 export const PRESET_ROLES: RoleOption[] = [

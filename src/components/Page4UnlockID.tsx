@@ -49,6 +49,7 @@ export const Page4UnlockID: React.FC<Page4UnlockIDProps> = ({
     techStack: activeMember.techStack || [],
     vibe: activeMember.vibe,
     generatedTitle: activeMember.generatedTitle,
+    builderId: activeMember.builderId,
     theme: teamData.theme,
     unlocked: true,
   };

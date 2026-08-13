@@ -16,7 +16,7 @@ import {
   Upload,
 } from 'lucide-react';
 import type { BuilderMember, TeamData } from '../types';
-import { PRESET_ROLES, PRESET_VIBES } from '../types';
+import { PRESET_ROLES, PRESET_VIBES, generateBuilderId } from '../types';
 import { generateBuilderTitles, getRandomTitle } from '../utils/titleGenerator';
 import { BuilderCardPreview } from './BuilderCardPreview';
 
@@ -78,6 +78,7 @@ export const Page3Details: React.FC<Page3DetailsProps> = ({
       techStack: [],
       vibe: 'Goa Vibes',
       generatedTitle: 'Goa Code Alchemist',
+      builderId: generateBuilderId(),
     };
     onChangeTeam({ members: [...teamData.members, newMember] });
     setActiveMemberIndex(teamData.members.length);
@@ -145,6 +146,7 @@ export const Page3Details: React.FC<Page3DetailsProps> = ({
     techStack: activeMember.techStack || [],
     vibe: activeMember.vibe,
     generatedTitle: activeMember.generatedTitle,
+    builderId: activeMember.builderId,
     theme: teamData.theme,
     unlocked: teamData.unlocked,
   };

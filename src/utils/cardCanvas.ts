@@ -59,6 +59,23 @@ export const renderCardToCanvas = async (
   ctx.font = 'bold 20px "Syne", sans-serif';
   ctx.fillText('HACKER HOUSE GOA • MARCH 2026', width / 2, 140);
 
+  // Builder ID (Top Right)
+  const builderIdText = data.builderId || '000XX';
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.3)';
+  ctx.beginPath();
+  ctx.roundRect(width - 160, 45, 110, 40, 8);
+  ctx.fill();
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = `rgba(250, 204, 21, 0.4)`; // Semi-transparent yellow or theme color could be used
+  ctx.stroke();
+
+  ctx.fillStyle = themeObj.accentColor || '#FACC15';
+  ctx.font = 'bold 22px monospace';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(builderIdText, width - 105, 65);
+  ctx.textBaseline = 'alphabetic';
+
   // Draw Avatar Photo / Placeholder
   const avatarSize = 280;
   const avatarX = width / 2;

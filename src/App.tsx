@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { TeamData, BuildMode, BuilderMember } from './types';
-import { DEFAULT_MEMBER } from './types';
+import { DEFAULT_MEMBER, generateBuilderId } from './types';
 import { WaveBackground } from './components/WaveBackground';
 import { Navbar } from './components/Navbar';
 import { Page1Landing } from './components/Page1Landing';
@@ -13,7 +13,7 @@ import './index.css';
 const INITIAL_TEAM_DATA: TeamData = {
   mode: 'solo',
   teamName: '',
-  members: [{ ...DEFAULT_MEMBER }],
+  members: [{ ...DEFAULT_MEMBER, builderId: generateBuilderId() }],
   theme: 'classic-green',
   unlocked: false,
 };
@@ -43,7 +43,7 @@ export const App: React.FC = () => {
 
   const handleSelectMode = (mode: BuildMode) => {
     if (mode === 'solo') {
-      const firstMember = teamData.members[0] || { ...DEFAULT_MEMBER };
+      const firstMember = teamData.members[0] || { ...DEFAULT_MEMBER, builderId: generateBuilderId() };
       setTeamData((prev) => ({
         ...prev,
         mode: 'solo',
@@ -65,6 +65,7 @@ export const App: React.FC = () => {
         techStack: ['React', 'TypeScript'],
         vibe: 'Goa Vibes',
         generatedTitle: 'Pixel Wave Surfer',
+        builderId: generateBuilderId(),
       };
       setTeamData((prev) => ({
         ...prev,
@@ -94,6 +95,7 @@ export const App: React.FC = () => {
           techStack: ['React', 'TypeScript', 'Solana', 'PyTorch'],
           vibe: 'Goa Vibes',
           generatedTitle: 'Sunset Solana Alchemist',
+          builderId: '894FX',
         },
       ],
       theme: 'classic-green',

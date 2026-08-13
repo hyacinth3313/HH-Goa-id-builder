@@ -48,7 +48,18 @@ export const BuilderCardPreview: React.FC<BuilderCardPreviewProps> = ({
       </svg>
 
       {/* Card Header Badge */}
-      <div className="card-header text-center mb-3">
+      <div className="card-header text-center mb-3 relative">
+        {/* Builder ID floating top right */}
+        <div 
+          className="absolute -top-1 right-0 font-mono text-[9px] font-bold tracking-widest px-1.5 py-0.5 rounded backdrop-blur-md"
+          style={{ 
+            color: themeObj.accentColor,
+            background: 'rgba(0, 0, 0, 0.25)',
+            border: `1px solid ${themeObj.accentColor}40`
+          }}
+        >
+          {data.builderId || '000XX'}
+        </div>
         <div
           className="card-header-badge py-1 px-3"
           style={{
