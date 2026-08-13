@@ -1754,3 +1754,25 @@ body {
   color: var(--hh-yellow-electric);
   border-top: 1.5px solid rgba(250, 204, 21, 0.2);
 }
+/* ----------------------------------------------------
+   BUILDER ID CARD — compact collectible sizing
+   (wraps BuilderCardPreview.tsx's flip container)
+---------------------------------------------------- */
+.builder-card-preview-shell {
+  width: 100%;
+  max-width: 220px;
+  min-width: 150px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1280px) {
+  .builder-card-preview-shell {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 420px) {
+  .builder-card-preview-shell {
+    max-width: 190px;
+  }
+}
