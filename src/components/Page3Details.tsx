@@ -146,6 +146,7 @@ export const Page3Details: React.FC<Page3DetailsProps> = ({
     techStack: activeMember.techStack || [],
     vibe: activeMember.vibe,
     generatedTitle: activeMember.generatedTitle,
+    builderId: activeMember.builderId,
     theme: teamData.theme,
     unlocked: teamData.unlocked,
   };
